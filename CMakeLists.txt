@@ -4,6 +4,7 @@ PROJECT(CrazyCPP)  #工程名称
 set(CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake/modules)
 include(cmake/config/MyConfigure.cmake)
 
+set(CMAKE_BUILD_TYPE RELEASE)
 
 include(cmake/toolsets/BasicTools.cmake)
 
@@ -81,7 +82,7 @@ CompileLib(
 ########################################python#####################################
 IF(BUILD_PYTHON_LIB)
     message("build python libraries")
-    include(cmake/python/ConfigurePython.cmake)
+    include(cmake/python_cmake/ConfigurePython.cmake)
 ENDIF(BUILD_PYTHON_LIB)
 
 ########################################main#####################################
