@@ -93,6 +93,7 @@ macro(CompileC_CPP_Lib inc_root src_root module_name cxxflag)
         set(toLIB_INCS_HEADER  ${CtoLIB_H} ${CtoLIB_HPP})
     endforeach()
 
+
     if(toLIB_SRCS_cc OR toLIB_SRCS_c)
         if(BUILD_SHARED_LIBS)
             add_library(${module_name} SHARED ${toLIB_SRCS_cc} ${toLIB_SRCS_c} ${toLIB_INCS_HEADER})
@@ -149,7 +150,8 @@ function(CompileLib inc_root src_root modules_list)
 
     separate_arguments(modules_list)
     foreach(module_name  ${modules_list})
-            CompileC_CPP_Lib(${inc_root} ${src_root} ${module_name} 14)
+
+            CompileC_CPP_Lib(${inc_root} ${src_root}/${module_name} ${module_name} 14)
             install(TARGETS ${module_name}
                     CONFIGURATIONS Release
                     DESTINATION lib)
