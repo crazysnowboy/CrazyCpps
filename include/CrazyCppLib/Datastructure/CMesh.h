@@ -774,9 +774,9 @@ public:
         DMatrix faces_mat(Faces().GetSize(),3,0);
         for(int j=0; j<Faces().GetSize(); j++)
         {
-            faces_mat.Set(0,j,Faces().Get(j).Id0());
-            faces_mat.Set(1,j,Faces().Get(j).Id1());
-            faces_mat.Set(2,j,Faces().Get(j).Id2());
+            faces_mat.Set(j,0,Faces().Get(j).Id0());
+            faces_mat.Set(j,1,Faces().Get(j).Id1());
+            faces_mat.Set(j,2,Faces().Get(j).Id2());
         }
         return faces_mat;
     }
@@ -786,9 +786,9 @@ public:
         DMatrix vertices_mat(Vertices().GetSize(),3,0.0);
         for(int j=0; j<Vertices().GetSize(); j++)
         {
-            vertices_mat.Set(0,j,Vertices().Get(j).GetCX());
-            vertices_mat.Set(1,j,Vertices().Get(j).GetCY());
-            vertices_mat.Set(2,j,Vertices().Get(j).GetCZ());
+            vertices_mat.Set(j,0,Vertices().Get(j).GetCX());
+            vertices_mat.Set(j,1,Vertices().Get(j).GetCY());
+            vertices_mat.Set(j,2,Vertices().Get(j).GetCZ());
         }
         return vertices_mat;
     }
@@ -798,9 +798,9 @@ public:
         DMatrix stroed_pts_mat(StoredPts().GetSize(),3,0.0);
         for(int j=0; j<StoredPts().GetSize(); j++)
         {
-            stroed_pts_mat.Set(0,j,StoredPts().Get(j).GetCX());
-            stroed_pts_mat.Set(1,j,StoredPts().Get(j).GetCY());
-            stroed_pts_mat.Set(2,j,StoredPts().Get(j).GetCZ());
+            stroed_pts_mat.Set(j,0,StoredPts().Get(j).GetCX());
+            stroed_pts_mat.Set(j,1,StoredPts().Get(j).GetCY());
+            stroed_pts_mat.Set(j,2,StoredPts().Get(j).GetCZ());
         }
         return stroed_pts_mat;
     }
@@ -810,8 +810,8 @@ public:
         DMatrix v_uvs_mat(Vertex_UVS().GetSize(),2,0.0);
         for(int j=0; j<Vertex_UVS().GetSize(); j++)
         {
-            v_uvs_mat.Set(0,j,Vertex_UVS().Get(j).GetCX());
-            v_uvs_mat.Set(1,j,Vertex_UVS().Get(j).GetCY());
+            v_uvs_mat.Set(j,0,Vertex_UVS().Get(j).GetCX());
+            v_uvs_mat.Set(j,1,Vertex_UVS().Get(j).GetCY());
         }
         return  v_uvs_mat;
     }
@@ -820,9 +820,9 @@ public:
         DMatrix v_nor_mat(V_Normals().GetSize(),3,0.0);
         for(int j=0; j<V_Normals().GetSize(); j++)
         {
-            v_nor_mat.Set(0,j,V_Normals().Get(j).GetCX());
-            v_nor_mat.Set(1,j,V_Normals().Get(j).GetCY());
-            v_nor_mat.Set(2,j,V_Normals().Get(j).GetCZ());
+            v_nor_mat.Set(j,0,V_Normals().Get(j).GetCX());
+            v_nor_mat.Set(j,1,V_Normals().Get(j).GetCY());
+            v_nor_mat.Set(j,2,V_Normals().Get(j).GetCZ());
         }
         return  v_nor_mat;
     }
@@ -831,8 +831,8 @@ public:
         DMatrix f_uvs_mat(Face_UVS().GetSize(),2,0.0);
         for(int j=0; j<Face_UVS().GetSize(); j++)
         {
-            f_uvs_mat.Set(0,j,Face_UVS().Get(j).GetCX());
-            f_uvs_mat.Set(1,j,Face_UVS().Get(j).GetCY());
+            f_uvs_mat.Set(j,0,Face_UVS().Get(j).GetCX());
+            f_uvs_mat.Set(j,1,Face_UVS().Get(j).GetCY());
         }
         return  f_uvs_mat;
     }
@@ -842,7 +842,7 @@ public:
         DMatrix L_mat(Landmarks().GetSize(),1,0);
         for(int j=0; j<Landmarks().GetSize(); j++)
         {
-            L_mat.Set(0,j,Landmarks().Get(j));
+            L_mat.Set(j,0,Landmarks().Get(j));
 
         }
         return L_mat;

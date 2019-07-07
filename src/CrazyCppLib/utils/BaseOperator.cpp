@@ -255,8 +255,9 @@ DMatrix BaseOperator::_SelectTrangleVertices2DMat(Mesh &src_mesh,DMatrix src_fac
         int src_vertex_id = iter->first;
         int dst_vertex_id = iter->second;
 
-        res_mat.Set(0,cnt,src_vertex_id);
-        res_mat.Set(1,cnt,dst_vertex_id);
+        res_mat.Set(cnt,0,src_vertex_id);
+        res_mat.Set(cnt,1,dst_vertex_id);
+
         cnt++;
 
     }

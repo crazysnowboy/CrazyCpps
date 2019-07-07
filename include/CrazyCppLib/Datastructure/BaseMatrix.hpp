@@ -1,13 +1,17 @@
 
 #ifndef CRAZY_BASEMATRIX_H
 #include<string>
-#include<assert.h>
 #include <CArray.hpp>
 #include <shared_ptr.hpp>
 #include <opencv2/opencv.hpp>
 #include <Eigen/Dense>
 #include <Eigen/Sparse>
 #include <Eigen/SparseLU>
+
+#undef NDEBUG
+#include<assert.h>
+#define NDEBUG
+
 namespace crazy
 {
 
@@ -173,6 +177,8 @@ protected:
 
         this->Base_Release();
         data.resize(r*c);
+
+//        std::cout <<"r = "<<r<<"    c="<<c<<std::endl;
         rows_=r;
         cols_=c;
         return true;
@@ -200,6 +206,7 @@ protected:
 
     bool Base_Set(int r,int c,Dtype v)
     {
+
         assert(c<cols());
         assert(r<rows());
 
