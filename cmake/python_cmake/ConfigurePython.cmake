@@ -10,7 +10,7 @@ set(PYTHON_ROOT /home/collin/anaconda3/envs/blender)
 Gobal_Append( LOCAL_LIBRARIES "${PYTHON_ROOT}/lib/libpython3.5m.so")
 
 
-set(PYLIB_DESTINATION ${PROJECT_SOURCE_DIR}/python/core/cpplib)
+set(PYLIB_DESTINATION ${PROJECT_BINARY_DIR}/python)
 
 foreach(HEAD_DIR ${HEAD_DIRS})
     file(GLOB_RECURSE files_hpp_i "${HEAD_DIR}/*.hpp")
@@ -112,8 +112,8 @@ set_target_properties(${PythonLIBName} PROPERTIES
 
 install(TARGETS ${PythonLIBName}
         CONFIGURATIONS Release
-        DESTINATION python)
+        DESTINATION .)
 install(FILES ${PYLIB_DESTINATION}/${PythonLIBName}.py
         CONFIGURATIONS Release
-        DESTINATION python)
+        DESTINATION .)
 

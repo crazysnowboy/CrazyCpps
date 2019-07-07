@@ -1,24 +1,26 @@
 #opencv
-#set(OpenCV_DIR /usr/local/opencv4/lib/cmake/opencv4)
-#find_package(PkgConfig REQUIRED)
-#pkg_check_modules(OPENCV REQUIRED opencv4)
-#Gobal_Append(MODULES_LIBRARIES "${OPENCV_LDFLAGS}")
-#Gobal_Append(MODULES_INCLUDE_DIRS "${OPENCV_INCLUDE_DIRS}")
+SET(OpenCV_DIR /usr/local/opencv330)
+find_package(PkgConfig REQUIRED)
+pkg_check_modules(OPENCV REQUIRED opencv330)
+Gobal_Append(MODULES_LIBRARIES "${OPENCV_LDFLAGS}")
+Gobal_Append(MODULES_INCLUDE_DIRS "${OPENCV_INCLUDE_DIRS}")
+link_directories(${OpenCV_DIR}/lib)
 
-SET(OpenCV_DIR /usr/local/opencv3/share/OpenCV)
-find_package(OpenCV REQUIRED)
-if(OpenCV_FOUND)
-    message(STATUS "The Opecv lib is found!")
-    message(${OpenCV_LIBS})
-    message(${OpenCV_INCLUDE_DIRS})
 
-    Gobal_Append(MODULES_LIBRARIES "${OpenCV_LIBS}")
-    Gobal_Append(MODULES_INCLUDE_DIRS "${OpenCV_INCLUDE_DIRS}")
-    link_directories(${OpenCV_DIR}/../../lib)
-
-else()
-    message(STATUS "The Opecv lib not found!")
-endif()
+#SET(OpenCV_DIR /usr/local/opencv3/share/OpenCV)
+#find_package(OpenCV REQUIRED)
+#if(OpenCV_FOUND)
+#    message(STATUS "The Opecv lib is found!")
+#    message(${OpenCV_LIBS})
+#    message(${OpenCV_INCLUDE_DIRS})
+#
+#    Gobal_Append(MODULES_LIBRARIES "${OpenCV_LIBS}")
+#    Gobal_Append(MODULES_INCLUDE_DIRS "${OpenCV_INCLUDE_DIRS}")
+#    link_directories(${OpenCV_DIR}/../../lib)
+#
+#else()
+#    message(STATUS "The Opecv lib not found!")
+#endif()
 
 #opengl
 #set(OpenGL_INC_DIR /usr/include/GL)
@@ -68,6 +70,18 @@ include_directories(${PYTHON_ROOT}/include
 #        message(STATUS "Eigen not Found")
 #    endif()
 #endif()
+SET(CUDA_DIR /usr/local/cudas/cuda-8.0)
+find_package(CUDA  REQUIRED)
+if(CUDA_FOUND)
+
+    Gobal_Append( MODULES_INCLUDE_DIRS  "${CUDA_INCLUDES_DIRS}")
+    Gobal_Append( MODULES_LIBRARIES "${CUDA_LIBRARIES}")
+    link_directories(${CUDA_LIBRARIE_DIRS})
+
+else()
+    message("--------------CUDA not FOUND------------")
+endif()
+
 
 Gobal_Append( MODULES_LIBRARIES "-ldl -lGL -lGLEW")
 
