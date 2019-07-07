@@ -83,5 +83,5 @@ else()
 endif()
 
 
-Gobal_Append( MODULES_LIBRARIES "-ldl -lGL -lGLEW")
+Gobal_Append( MODULES_LIBRARIES "-ldl -lGL -lGLEW -lglut  -lGLU ")
 
