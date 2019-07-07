@@ -4,7 +4,8 @@ set(HEAD_DIRS   ${PROJECT_SOURCE_DIR}/include/CrazyCppLib
 set(SRCS_DIRS   ${PROJECT_SOURCE_DIR}/src/CrazyCppLib
         )
 
-set(PYTHON_ROOT /home/collin/.conda/envs/ai)
+# set(PYTHON_ROOT /home/collin/.conda/envs/ai)
+set(PYTHON_ROOT /home/collin/anaconda3/envs/blender)
 
 Gobal_Append( LOCAL_LIBRARIES "${PYTHON_ROOT}/lib/libpython3.5m.so")
 
@@ -89,7 +90,7 @@ set_property(   SOURCE ${PYLIB_DESTINATION}/py${PROJECT_NAME}.i
 
 set (UseSWIG_TARGET_NAME_PREFERENCE STANDARD)
 set(PythonLIBName py${PROJECT_NAME})
-cmake_policy(SET CMP0078 NEW)
+
 
 swig_add_library(${PythonLIBName}
         LANGUAGE python
