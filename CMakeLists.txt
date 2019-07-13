@@ -76,7 +76,7 @@ set(LIBRARIES ${MODULE_LIBS_LIST})
 CompileLib(
             "${PROJECT_SOURCE_DIR}/include"
             "${PROJECT_SOURCE_DIR}/src"
-            "CrazyCppLib Pangolin")
+            "CrazyCppLib Pangolin ZipLib")
 
 
 ########################################python#####################################

@@ -1,12 +1,12 @@
 
 
 RemoveFiles("${PROJECT_SOURCE_DIR}/src"
-        "DDEFitting"
+        "test"
         "*.txt *.hpp *.h *.tff"
         )
 
 RemoveFiles("${PROJECT_SOURCE_DIR}/include"
-            "DDEFitting"
+            "test"
             "*.cc *.c *.cpp *.txt *.tff"
             )
 

@@ -65,8 +65,9 @@ bool CrazyRender::Rendering(crazy::DMatrix project_matrix, const char *render_mo
     // draw to texture
     ShaderRendering(project_matrix,render_mode);
 
-    cv::Mat color_texture = this->GetColorTexture(project_matrix,render_mode,640,480);
-    cv::Mat depth_texture = this->GetDepthTexture(project_matrix,render_mode,640,480);
+    //todo: memory leak exist here below,need to fix
+//    cv::Mat color_texture = this->GetColorTexture(project_matrix,render_mode,640,480);
+//    cv::Mat depth_texture = this->GetDepthTexture(project_matrix,render_mode,640,480);
 
     this->UnBindFBO();
     this->DeleteFBO();

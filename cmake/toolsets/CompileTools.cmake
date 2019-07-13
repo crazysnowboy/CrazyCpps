@@ -93,6 +93,7 @@ macro(CompileC_CPP_Lib inc_root src_root module_name cxxflag)
         set(toLIB_INCS_HEADER  ${CtoLIB_H} ${CtoLIB_HPP})
     endforeach()
 
+
     if(toLIB_SRCS_cc OR toLIB_SRCS_c)
         if(BUILD_SHARED_LIBS)
             add_library(${module_name} SHARED ${toLIB_SRCS_cc} ${toLIB_SRCS_c} ${toLIB_INCS_HEADER})
@@ -135,9 +136,9 @@ macro(CompileMain MAIN_PATHS type)
                     RUNTIME_OUTPUT_DIRECTORY "${PROJECT_BINARY_DIR}/bin")
 
             target_compile_features(${ExeName} PRIVATE cxx_std_14)
-            install(TARGETS ${ExeName}
-                    CONFIGURATIONS Release
-                    DESTINATION bin)
+#            install(TARGETS ${ExeName}
+#                    CONFIGURATIONS Release
+#                    DESTINATION bin)
 
         endforeach(source)
     endif()
@@ -149,10 +150,11 @@ function(CompileLib inc_root src_root modules_list)
 
     separate_arguments(modules_list)
     foreach(module_name  ${modules_list})
-            CompileC_CPP_Lib(${inc_root} ${src_root} ${module_name} 14)
-            install(TARGETS ${module_name}
-                    CONFIGURATIONS Release
-                    DESTINATION lib)
+
+            CompileC_CPP_Lib(${inc_root} ${src_root}/${module_name} ${module_name} 14)
+#            install(TARGETS ${module_name}
+#                    CONFIGURATIONS Release
+#                    DESTINATION lib)
     endforeach()
 
 endfunction()
