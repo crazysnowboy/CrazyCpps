@@ -1,7 +1,7 @@
 #opencv
-SET(OpenCV_DIR /usr/local/opencv330)
+SET(OpenCV_DIR /usr/local/opencv3)
 find_package(PkgConfig REQUIRED)
-pkg_check_modules(OPENCV REQUIRED opencv330)
+pkg_check_modules(OPENCV REQUIRED opencv3)
 Gobal_Append(MODULES_LIBRARIES "${OPENCV_LDFLAGS}")
 Gobal_Append(MODULES_INCLUDE_DIRS "${OPENCV_INCLUDE_DIRS}")
 link_directories(${OpenCV_DIR}/lib)
