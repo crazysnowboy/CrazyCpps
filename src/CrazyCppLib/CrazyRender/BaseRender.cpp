@@ -492,8 +492,7 @@ bool BaseRender::DeleteTexture()
 bool BaseRender::UploadTexture(Mesh &mesh)
 {
 
-    Mesh tempMesh = mesh;
-    cv::Mat Texture = ConvertTextureAndUvs(tempMesh);
+    cv::Mat Texture = ConvertTextureAndUvs(mesh);
     this->DeleteTexture();
     ImageTextures = new GlTexture(Texture.cols, Texture.rows, GL_RGBA, true, 0, GL_RGBA, GL_UNSIGNED_BYTE);
     ImageTextures->Upload(Texture.data, GL_RGBA, GL_UNSIGNED_BYTE);
