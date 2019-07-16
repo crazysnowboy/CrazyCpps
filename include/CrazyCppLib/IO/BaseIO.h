@@ -102,6 +102,7 @@ bool readMatBinary(std::istream& ifs, cv::Mat& in_mat);
 bool LoadMatBinary(const std::string& filename, cv::Mat& intput);
 
 DMatrix LoadMatBinary2Dmat(const char * filename);
+bool SaveDMat2BinaryCVMat(const char * filename,DMatrix data);
 
 }
 

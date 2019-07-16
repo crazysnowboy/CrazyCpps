@@ -877,6 +877,13 @@ DMatrix LoadMatBinary2Dmat(const char * filename)
     return result;
 
 }
+bool SaveDMat2BinaryCVMat(const char * filename,DMatrix data)
+{
+    cv::Mat cv_mat =Tool::CvtDMatrix2CVMat(data);
+    std::string path = filename;
+    SaveMatBinary(path,cv_mat);
+    return true;
+}
 
 
 }
