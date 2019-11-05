@@ -91,7 +91,7 @@ crazy::DMatrix CvtCVMat2DMatrix(cv::Mat mat)
     {
         for(int x=0; x<d_matrix.cols(); x++)
         {
-            d_matrix.Set(x,y,mat.at<double>(y,x));
+            d_matrix.Set(y,x,mat.at<double>(y,x));
 
         }
     }

@@ -1,7 +1,7 @@
 #opencv
-SET(OpenCV_DIR /usr/local/opencv3)
+SET(OpenCV_DIR /usr/local/opencv344)
 find_package(PkgConfig REQUIRED)
-pkg_check_modules(OPENCV REQUIRED opencv3)
+pkg_check_modules(OPENCV REQUIRED opencv344)
 Gobal_Append(MODULES_LIBRARIES "${OPENCV_LDFLAGS}")
 Gobal_Append(MODULES_INCLUDE_DIRS "${OPENCV_INCLUDE_DIRS}")
 link_directories(${OpenCV_DIR}/lib)
@@ -70,17 +70,17 @@ include_directories(${PYTHON_ROOT}/include
 #        message(STATUS "Eigen not Found")
 #    endif()
 #endif()
-SET(CUDA_DIR /usr/local/cudas/cuda-8.0)
-find_package(CUDA  REQUIRED)
-if(CUDA_FOUND)
+# SET(CUDA_DIR /usr/local/cudas/cuda-8.0)
+# find_package(CUDA  REQUIRED)
+# if(CUDA_FOUND)
 
-    Gobal_Append( MODULES_INCLUDE_DIRS  "${CUDA_INCLUDES_DIRS}")
-    Gobal_Append( MODULES_LIBRARIES "${CUDA_LIBRARIES}")
-    link_directories(${CUDA_LIBRARIE_DIRS})
+#     Gobal_Append( MODULES_INCLUDE_DIRS  "${CUDA_INCLUDES_DIRS}")
+#     Gobal_Append( MODULES_LIBRARIES "${CUDA_LIBRARIES}")
+#     link_directories(${CUDA_LIBRARIE_DIRS})
 
-else()
-    message("--------------CUDA not FOUND------------")
-endif()
+# else()
+#     message("--------------CUDA not FOUND------------")
+# endif()
 
 
 Gobal_Append( MODULES_LIBRARIES "-ldl -lGL -lGLEW -lglut  -lGLU ")
