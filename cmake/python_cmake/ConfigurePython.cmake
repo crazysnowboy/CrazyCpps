@@ -4,8 +4,9 @@ set(HEAD_DIRS   ${PROJECT_SOURCE_DIR}/include/CrazyCppLib
 set(SRCS_DIRS   ${PROJECT_SOURCE_DIR}/src/CrazyCppLib
         )
 
- set(PYTHON_ROOT /home/collin/.conda/envs/ai)
-#set(PYTHON_ROOT /home/collin/anaconda3/envs/blender)
+#  set(PYTHON_ROOT /home/collin/.conda/envs/ai)
+# set(PYTHON_ROOT /home/collin/anaconda3/envs/blender)
+SET(PYTHON_ROOT /home/collin/.conda/envs/3d_face_tracking)
 
 Gobal_Append( LOCAL_LIBRARIES "${PYTHON_ROOT}/lib/libpython3.5m.so")
 

@@ -825,7 +825,7 @@ bool writeMatBinary(std::ofstream& ofs, const cv::Mat& out_mat)
 bool SaveMatBinary(const std::string& filename, const cv::Mat& output)
 {
 
-    std::cout << "saved bin file = "<<filename<<std::endl;
+    // std::cout << "saved bin file = "<<filename<<std::endl;
     std::ofstream ofs(filename, std::ios::binary);
     if(ofs.is_open() ==false)
     {
